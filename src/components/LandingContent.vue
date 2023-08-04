@@ -8,11 +8,12 @@ export default {
         return {
             countryInput: '',
             region: '',
-            countries: json,
+            countries: [],
         };
     },
     mounted() {
         console.log(this.countries, 'cc');
+        this.countries = json
     },
     methods: {
         toggleTheme() {
@@ -21,7 +22,12 @@ export default {
         getRegion(regionInput) {
             this.region = regionInput;
             console.log(this.region);
-        }
+            if(regionInput){
+            this.countries = json.filter(obj => obj.region.includes(regionInput));
+            } else{
+              this.countries = json
+            }
+          }
     },
     components: { DataCountry }
 };
@@ -41,11 +47,13 @@ export default {
     <div class="dropdown">
   <button class="dropbutton">Filter by Region <span class='dropdownIcon'>⌄</span></button>
   <div class="dropdown-content">
+  <button @click="getRegion(undefined)">All</button>
   <button @click="getRegion('Africa')">Africa</button>
    <button @click="getRegion('America')">America</button>
    <button @click="getRegion('Asia')">Asia</button>
    <button @click="getRegion('Europe')">Europe</button>
    <button @click="getRegion('Oceania')">Oceania</button>
+
   </div>
 </div>
 
