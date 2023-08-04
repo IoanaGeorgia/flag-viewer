@@ -1,7 +1,6 @@
 <script>
  import json from '..\\assets\\data.json'
 import DataCountry from './DataCountry.vue'
-import HeaderComponent from './HeaderComponent.vue'
 export default {
     name: 'LandingContent',
     data() {
@@ -16,14 +15,19 @@ export default {
         this.countries = json
     },
     methods: {
-        toggleTheme() {
-            return;
-        },
+
         getRegion(regionInput) {
             this.region = regionInput;
             console.log(this.region);
             if(regionInput){
             this.countries = json.filter(obj => obj.region.includes(regionInput));
+            } else{
+              this.countries = json
+            }
+          },
+          filterByCountry(){
+            if(this.countryInput){
+            this.countries = json.filter(obj => obj.name.toLowerCase().includes(this.countryInput.toLowerCase()));
             } else{
               this.countries = json
             }
@@ -40,7 +44,7 @@ export default {
       <div class="inputIcon">
          <svg class="svg-icon search-icon" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">A magnifying glass icon.</desc><g class="search-path" fill="none" stroke="#848F91"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg>
       </div>
-      <input v-model='countryInput' class="inputElem" placeholder="Search for a country...">
+      <input v-model.trim='countryInput' @keyup="filterByCountry()" class="inputElem" placeholder="Search for a country...">
     </div>
 
 

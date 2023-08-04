@@ -19,7 +19,7 @@ export default {
         required: true
       },
       capital: {
-        type: String,
+        value: [String, undefined],
         required: true
       },
     },

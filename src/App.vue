@@ -6,7 +6,7 @@ import HomeView from './components/HomeView.vue'
 <template>
 
     <div class="wrapper">
-      <HomeView msg="You did it!" />
+      <HomeView />
       <!-- <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
