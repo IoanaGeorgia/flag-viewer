@@ -51,10 +51,12 @@ export default {
     </div>
 
     <div class="dataWrapper">
-     <DataCountry v-for="i in countries" :countryName='i.name'
+      <div v-for="i in countries">
+     <DataCountry :countryName='i.name'
      :flagIcon="i.flags.png" :population="i.population"
      :region="i.region" :capital="i.capital"
       />
+    </div>
 </div>
   </div>
 </template>
