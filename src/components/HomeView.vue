@@ -1,5 +1,6 @@
 <script setup>
 import HeaderComponent from './HeaderComponent.vue'
+import LandingContent from './LandingContent.vue'
 
 defineProps({
   msg: {
@@ -12,7 +13,7 @@ defineProps({
 <template>
   <div class="greetings">
     <HeaderComponent />
-a
+    <LandingContent />
   </div>
 </template>
 
