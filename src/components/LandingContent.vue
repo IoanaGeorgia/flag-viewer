@@ -1,33 +1,34 @@
 <script>
  import json from '..\\assets\\data.json'
- import DataCountry from './DataCountry.vue'
+import DataCountry from './DataCountry.vue'
+import HeaderComponent from './HeaderComponent.vue'
 export default {
-    name:'LandingContent',
-  data() {
-    return {
-      countryInput:'',
-      region:'',
-      countries: json,
-    }
-  },
-  mounted(){
-    console.log(this.countries, 'cc')
-  },
-  methods:{
-    toggleTheme(){
-        return
+    name: 'LandingContent',
+    data() {
+        return {
+            countryInput: '',
+            region: '',
+            countries: json,
+        };
     },
-    getRegion(regionInput){
-      this.region = regionInput
-      console.log(this.region)
-    }
-  }
+    mounted() {
+        console.log(this.countries, 'cc');
+    },
+    methods: {
+        toggleTheme() {
+            return;
+        },
+        getRegion(regionInput) {
+            this.region = regionInput;
+            console.log(this.region);
+        }
+    },
+    components: { DataCountry }
 };
 </script>
 
 <template>
   <div class="landingWrapper">
-
     <div class="filtersWrapper">
     <div class="inputWrapper">
       <div class="inputIcon">
@@ -51,13 +52,8 @@ export default {
     </div>
 
     <div class="dataWrapper">
-      <div v-for="i in countries">
-     <DataCountry :countryName='i.name'
-     :flagIcon="i.flags.png" :population="i.population"
-     :region="i.region" :capital="i.capital"
-      />
+      <DataCountry v-for="i in countries" :countryName="i.name" :flagIcon="i.flags.png" :population="i.population" :capital="i.capital" :region="i.region" /> 
     </div>
-</div>
   </div>
 </template>
 

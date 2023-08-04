@@ -31,19 +31,22 @@ export default {
 };
 </script>
 
+
 <template>
   <div class="countryWrapper">
-    <img :src="flagIcon" class="countryFlag">
-    <p class="countryTitle">{{ countryName }}</p>
-    <p class="countrInfo">Population: 
+     <img :src="flagIcon" class="countryFlag"> 
+     <div class="countryInfoWrapper">
+     <p class="countryTitle">{{ countryName }}</p>
+    <p class="countryInfo">Population: 
       <span class='countryInfoSpan'>{{ population }}</span>
     </p>
-        <p class="countrInfo">Region: 
+        <p class="countryInfo">Region: 
       <span class='countryInfoSpan'>{{ region}}</span>
     </p>
-        <p class="countrInfo">Capital: 
+        <p class="countryInfo">Capital: 
       <span class='countryInfoSpan'>{{ capital }}</span>
-    </p>
+    </p> 
+    </div>
   </div>
 </template>
 
