@@ -6,13 +6,9 @@ import HomeView from './components/HomeView.vue'
 <template>
 
     <div class="wrapper">
-      <HomeView />
-      <!-- <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav> -->
+      <!-- <HomeView /> -->
     </div>
 
-  <!-- <RouterView /> -->
+  <RouterView />
 </template>
 
