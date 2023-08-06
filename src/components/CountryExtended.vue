@@ -13,6 +13,20 @@ export default {
         console.log('munted country', this.info)
     },
     methods: {
+      populationFormatter(population){
+    return population.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+      },
+      languageFormatter(languages){
+        if(languages.length===1){
+          return languages[0].name
+        } else{
+          let languageString =[]
+            for(let i of languages){
+              languageString.push(i.name)
+            }
+            return languageString.join(', ')
+        }
+      }
     },
     components: { HeaderComponent }
 };
@@ -33,7 +47,7 @@ export default {
       <span class='countryInfoSpan'>{{ info.nativeName }}</span>
     </p> 
       <p class="countryInfo">Population: 
-      <span class='countryInfoSpan'>{{ info.population }}</span>
+      <span class='countryInfoSpan'>{{ populationFormatter(info.population) }}</span>
     </p> 
       <p class="countryInfo">Region: 
       <span class='countryInfoSpan'>{{ info.region }}</span>
@@ -56,16 +70,18 @@ export default {
       <span class='countryInfoSpan'>{{ info.currencies[0].name}}</span>
     </p> 
       <p class="countryInfo">Languages: 
-      <span v-for="language in info.languages" class='countryInfoSpan'>{{ language.name }}</span>
+      <span class='countryInfoSpan'>{{ languageFormatter(info.languages) }}</span>
     </p> 
         </div>
 
 
 
       </div>
+            <span class="borderCountries"><span v-for='border in info.borders' class='border'>{{ border }}</span></span>
     </div>
+
   </div>
-  <span class="borderCountries"><span v-for='border in info.borders' class='border'>{{ border }}</span></span>
+
   </div>
 
 </template>
