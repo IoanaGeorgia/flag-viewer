@@ -9,7 +9,7 @@ export default {
       countryInput: "",
       region: "",
       countries: [],
-      detailsPage: false,
+      // detailsPage: false,
       detailsInfo: {},
     };
   },
@@ -43,10 +43,14 @@ export default {
         params: { name: country.name },
       });
 
-      this.detailsPage = true;
+            this.$store.commit('TOGGLE_DETAILS', true)
       this.detailsInfo = country;
-      console.log(this.detailsInfo, 'sss')
     },
+  },
+  computed:{
+    showDetails(){
+      return this.$store.state.showDetails
+    }
   },
 
   components: { DataCountry, CountryExtended },
@@ -55,7 +59,7 @@ export default {
 
 <template>
   <!-- <div > -->
-  <CountryExtended v-if="detailsPage" :info="detailsInfo" />
+  <CountryExtended v-if="showDetails" :info="detailsInfo" />
   <!-- </div> -->
   <div v-else class="landingWrapper">
     <div class="filtersWrapper">
