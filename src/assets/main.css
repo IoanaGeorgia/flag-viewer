@@ -253,3 +253,62 @@ button {
 .borderingCountries{
   margin-top:5vh;
 }
+@media (max-width: 900px) {
+  .detailsInnerWrapper, .detailsText, .detailsInfo{
+    flex-direction: column;
+    width:100%;
+    margin-left:0px;
+  }
+  .landingWrapper{
+    padding:7vh 7vh 20vh;
+  }
+  .headerWrapper{
+    padding:5vh 5vh;
+  }
+  .detailsText > div, .dropbutton{
+    width:100%;
+  }
+ .borderWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+ }
+ .borderWrapper > span{
+  margin-top:3vh;
+ }
+ .borderWrapper button{
+  margin-left: 0px;
+  margin-right:15px;
+  margin-top:15px;
+ }
+  .detailsInnerWrapper img{
+    min-width: 100%;
+    margin:5vh 0vh;
+  }
+  .dataWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0vh 5vh;
+  }
+  .countryWrapper{
+    min-width: 90%;
+    max-height: 100%;
+
+  }
+  .filtersWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top:-2vh;
+    margin-left:1vh;
+  }
+  .inputWrapper{
+    width:90%;
+  }
+  .dropdown{
+    margin-top:10vh;
+    width:60%;
+  }
+}

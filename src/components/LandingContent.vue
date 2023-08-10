@@ -65,6 +65,7 @@ export default {
     <div class="filtersWrapper">
       <div class="inputWrapper">
         <div class="inputIcon">
+
           <svg
             class="svg-icon search-icon"
             aria-labelledby="title desc"

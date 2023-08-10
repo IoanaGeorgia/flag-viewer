@@ -110,9 +110,12 @@ export default {
 
       </div>
             <div class="borderingCountries">
-            <span v-if="countryInfo.borders" class="countryInfo borderWrapper">Border Countries:
+            <span v-if="countryInfo.borders" class="countryInfo borderWrapper"> Border Countries:
+              <span>
               <button v-for='border in countryInfo.borders' @click="goToBordering(border)" class='countryInfoSpan borderingCountriesButton'>{{ convertBorder(border) }}</button></span>
-            <span v-else class="countryInfo">Border Countries:  <span class="countryInfoSpan"> None </span></span>
+            </span>
+              <span v-else class="countryInfo">Border Countries:  <span class="countryInfoSpan"> None </span></span>
+             
           </div>
           </div>
 
