@@ -1,20 +1,11 @@
-body {
-  padding: 0px;
-  margin: 0px;
-  font-family: var(--defaultFontFamily);
-  background-color: var(--veryLightBlueLightModeBg);
-}
-button {
-  cursor: pointer;
-}
+
 :root {
-  --darkBlueDarkMode: hsl(209, 23%, 22%);
-  --veryDarkBlueDarkModeBg: hsl(207, 26%, 17%);
-  /* --verydarkblueDarkModeText: hsl(200, 15%, 8%); */
-  --darkGreyLightModeInput: hsl(0, 0%, 52%);
-  --veryLightDarkGreyLightModeInput: hsl(0, 0%, 74%);
-  --veryLightBlueLightModeBg: hsl(0, 0%, 98%);
-  --whiteDarkModeText: hsl(0, 0%, 100%);
+  --fontColorSecondary: hsl(209, 23%, 22%);
+  --veryfontColorSecondaryBg: hsl(207, 26%, 17%);
+  --buttonHover: hsl(0, 0%, 52%);
+  --borderAccentColor: hsl(0, 0%, 74%);
+  --backgroundColor: hsl(0, 0%, 98%);
+  --lighterBackgroundColor: hsl(0, 0%, 100%);
   --homePageFontSize: 14px;
   --detailPagefontSize: 16px;
   --defaultFontFamily: "Nunito Sans", sans-serif;
@@ -23,47 +14,53 @@ button {
   --bolderFontWeight: 800;
 }
 [data-theme="darkMode"] {
-  --darkGreyLightModeInput: hsl(0, 0%, 52%);
-  --veryLightBlueLightModeBg: hsl(207, 26%, 17%);
-  --whiteDarkModeText: hsl(209, 23%, 22%);
-  --verydarkblueDarkModeText:hsl(0, 0%, 87%);
-   --darkBlueDarkMode: hsl(0, 0%, 93%);
-  --veryLightDarkGreyLightModeInput: hsl(207, 22%, 10%);
-  
+  --buttonHover: hsl(0, 0%, 52%);
+  --backgroundColor: hsl(207, 26%, 17%);
+  --lighterBackgroundColor: hsl(209, 23%, 22%);
+  --fontColorMain: hsl(0, 0%, 87%);
+  --fontColorSecondary: hsl(0, 0%, 93%);
+  --borderAccentColor: hsl(207, 22%, 10%);
+}
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: var(--defaultFontFamily);
+  background-color: var(--backgroundColor);
+}
+button {
+  cursor: pointer;
 }
 .headerWrapper {
-  background-color: var(--whiteDarkModeText);
+  background-color: var(--lighterBackgroundColor);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6vh 15vh;
+  padding: 4vh 15vh;
   position: relative;
   z-index: 10;
-  box-shadow: 0px 1px 10px 0.1px var(--veryLightDarkGreyLightModeInput);
-  /* border-bottom: 1px solid var(--veryLightDarkGreyLightModeInput); */
+  box-shadow: 0px 1px 10px 0.1px var(--borderAccentColor);
 }
 .headerTitle {
   font-weight: var(--bolderFontWeight);
-  color: var(--verydarkblueDarkModeText);
+  color: var(--fontColorMain);
   font-size: 18px;
 }
 .themeButton {
   background-color: transparent;
   border: none;
   font-weight: var(--boldFontWeight);
-  color: var(--verydarkblueDarkModeText);
+  color: var(--fontColorMain);
   display: flex;
   align-items: center;
 }
 .themeButtonIcon {
   margin-right: 7px;
   font-size: 16px;
-  transform: rotate(-20deg);
 }
 .landingWrapper {
   padding: 10vh 15vh;
-  background-color: var(--veryLightBlueLightModeBg);
-  color:var(--darkBlueDarkMode);
+  background-color: var(--backgroundColor);
+  color: var(--fontColorSecondary);
 }
 .svg-icon.search-icon {
   display: inline-block;
@@ -74,11 +71,10 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--whiteDarkModeText);
+  background-color: var(--lighterBackgroundColor);
   padding: 15px;
-  /* border:1px solid var(--veryLightDarkGreyLightModeInput); */
   border-radius: 2px;
-  box-shadow: 0px 1px 10px 0.1px var(--veryLightDarkGreyLightModeInput);
+  box-shadow: 0px 1px 10px 0.1px var(--borderAccentColor);
 }
 .inputElem {
   width: 90%;
@@ -86,7 +82,7 @@ button {
   border: none;
   padding: 0px 0px 4px 15px;
   background-color: transparent;
-  color:var(--darkBlueDarkMode);
+  color: var(--fontColorSecondary);
 }
 .filtersWrapper {
   display: flex;
@@ -94,21 +90,20 @@ button {
   align-items: center;
 }
 .dropbutton {
-  background-color: var(--whiteDarkModeText);
-  color: var(--verydarkblueDarkModeText);
+  background-color: var(--lighterBackgroundColor);
+  color: var(--fontColorMain);
   padding: 16px;
-  padding-right: 25px;
+  padding-right: 60px;
   font-size: var(--homePageFontSize);
   border: none;
   border-radius: 4px;
   cursor: pointer;
   display: flex;
-  box-shadow: 0px 0px 4px 0.1px var(--veryLightDarkGreyLightModeInput);
-
+  box-shadow: 0px 0px 4px 0.1px var(--borderAccentColor);
 }
 .dropdownIcon {
   margin-top: -3%;
-  right: 12px;
+  right: 7px;
   position: absolute;
 }
 .dropdown {
@@ -119,29 +114,29 @@ button {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: var(--whiteDarkModeText);
+  background-color: transparent;
   width: 100%;
   z-index: 1;
-  margin-top: 5px;
   border-radius: 7px;
-    box-shadow: 0px 1px 10px 0.1px var(--veryLightDarkGreyLightModeInput);
-
+  box-shadow: 0px 1px 10px 0.1px var(--borderAccentColor);
 }
 
 .dropdown-content button {
-  color: var(--darkBlueDarkMode);
-  background-color: var(--veryLightBlueLightModeBg);
+  color: var(--fontColorSecondary);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  background-color: transparent;
   width: 100%;
   border: none;
   text-align: left;
+  background-color: var(--lighterBackgroundColor);
 }
+/* .dropdown-content button:nth-of-type(1){
+  margin-top:10px;
+} */
 
 .dropdown-content button:hover {
-   background-color:var(--darkGreyLightModeInput)
+  background-color: var(--buttonHover);
 }
 
 .dropdown:hover .dropdown-content {
@@ -149,7 +144,7 @@ button {
 }
 
 .dropdown:hover .dropbutton {
-  background-color: var(--whiteDarkModeText);
+  background-color: var(--lighterBackgroundColor);
 }
 .dataWrapper {
   margin-top: 10vh;
@@ -160,8 +155,8 @@ button {
   align-items: flex-start;
 }
 .countryWrapper {
-  background-color: var(--whiteDarkModeText);
-  color:var(--darkBlueDarkMode);
+  background-color: var(--lighterBackgroundColor);
+  color: var(--fontColorSecondary);
   min-width: 19vw;
   max-width: 15vw;
   height: 100%;
@@ -169,7 +164,7 @@ button {
   min-height: 50vh;
   border-radius: 5px;
   box-shadow: 0px 1px 16px 0px rgba(0, 0, 0, 0.2);
-  cursor:pointer;
+  cursor: pointer;
 }
 .countryFlag {
   width: 100%;
@@ -195,120 +190,122 @@ button {
 .countryInfoSpan {
   font-weight: var(--defaultFontWeight);
 }
-.goBack{
-  padding:10px 25px;
-  color:rgb(66, 66, 66);
+.goBack {
+  padding: 10px 25px;
+  color: rgb(66, 66, 66);
   background-color: transparent;
-    box-shadow: 0px 1px 6px 3px rgba(0, 0, 0, 0.2);
-  border:none;
+  box-shadow: 0px 1px 6px 3px rgba(0, 0, 0, 0.2);
+  border: none;
   border-radius: 4px;
-  color:var(--darkBlueDarkMode)
-
+  color: var(--fontColorSecondary);
 }
-.detailsInnerWrapper{
-  display:flex;
-  margin-top:40px;
+.detailsInnerWrapper {
+  display: flex;
+  margin-top: 40px;
 }
-.detailsInnerWrapper img{
-  width:45%;
+.detailsInnerWrapper img {
+  width: 45%;
   max-width: 40%;
   /* max-height:30%;
   min-height: 50%; */
   height: 50%;
   box-shadow: 0px 1px 6px 3px rgba(0, 0, 0, 0.2);
-
 }
-.detailsInfo{
-  margin-left:10%;
-  width:50%;
+.detailsInfo {
+  margin-left: 10%;
+  width: 50%;
 }
-.detailsTitle{
-  font-size:20px;
+.detailsTitle {
+  font-size: 20px;
   font-weight: var(--bolderFontWeight);
 }
-.detailsText{
+.detailsText {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
-.detailsText div{
-  width:50%;
+.detailsText div {
+  width: 50%;
 }
-.borderingCountriesButton{
-        box-shadow: 0px 1px 10px 0.1px var(--veryLightDarkGreyLightModeInput);
-    padding: 7px 30px;
-    margin:5px 10px;
-    background-color: transparent;
-    border:none;
-    font-size: 13px;
-    color:var(--darkBlueDarkMode)
-
+.borderingCountriesButton {
+  box-shadow: 0px 1px 10px 0.1px var(--borderAccentColor);
+  padding: 7px 30px;
+  margin: 5px 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 13px;
+  color: var(--fontColorSecondary);
 }
-.borderWrapper{
+.borderWrapper {
   display: flex;
+  align-items: flex-start;
   justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
 }
-.borderingCountries{
-  margin-top:5vh;
+.borderCountriesLabel{
+  white-space: nowrap;
+  margin-top:1%;
+}
+.borderingCountries {
+  margin-top: 5vh;
 }
 @media (max-width: 900px) {
-  .detailsInnerWrapper, .detailsText, .detailsInfo{
+  .detailsInnerWrapper,
+  .detailsText,
+  .detailsInfo {
     flex-direction: column;
-    width:100%;
-    margin-left:0px;
+    width: 100%;
+    margin-left: 0px;
   }
-  .landingWrapper{
-    padding:7vh 7vh 20vh;
+  .landingWrapper {
+    padding: 7vh 7vh 20vh;
   }
-  .headerWrapper{
-    padding:5vh 5vh;
+  .headerWrapper {
+    padding: 5vh 5vh;
   }
-  .detailsText > div, .dropbutton{
-    width:100%;
+  .detailsText > div,
+  .dropbutton {
+    width: 100%;
   }
- .borderWrapper{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
- }
- .borderWrapper > span{
-  margin-top:3vh;
- }
- .borderWrapper button{
-  margin-left: 0px;
-  margin-right:15px;
-  margin-top:15px;
- }
-  .detailsInnerWrapper img{
+  .borderWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .borderWrapper > span {
+    margin-top: 3vh;
+  }
+  .borderWrapper button {
+    margin-left: 0px;
+    margin-right: 15px;
+    margin-top: 15px;
+  }
+  .detailsInnerWrapper img {
     min-width: 100%;
-    margin:5vh 0vh;
+    margin: 5vh 0vh;
   }
-  .dataWrapper{
+  .dataWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding:0vh 5vh;
+    padding: 0vh 5vh;
   }
-  .countryWrapper{
+  .countryWrapper {
     min-width: 90%;
     max-height: 100%;
-
   }
-  .filtersWrapper{
+  .filtersWrapper {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top:-2vh;
-    margin-left:1vh;
+    margin-top: -2vh;
+    margin-left: 1vh;
   }
-  .inputWrapper{
-    width:90%;
+  .inputWrapper {
+    width: 90%;
   }
-  .dropdown{
-    margin-top:10vh;
-    width:60%;
+  .dropdown {
+    margin-top: 10vh;
+    width: 60%;
   }
 }

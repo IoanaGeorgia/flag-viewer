@@ -9,7 +9,6 @@ export default {
       countryInput: "",
       region: "",
       countries: [],
-      // detailsPage: false,
       detailsInfo: {},
     };
   },
@@ -37,20 +36,19 @@ export default {
     },
 
     learnMore(country) {
-      console.log("learnmore");
       this.$router.push({
         name: "about",
         params: { name: country.name },
       });
 
-            this.$store.commit('TOGGLE_DETAILS', true)
+      this.$store.commit("TOGGLE_DETAILS", true);
       this.detailsInfo = country;
     },
   },
-  computed:{
-    showDetails(){
-      return this.$store.state.showDetails
-    }
+  computed: {
+    showDetails() {
+      return this.$store.state.showDetails;
+    },
   },
 
   components: { DataCountry, CountryExtended },
@@ -58,28 +56,21 @@ export default {
 </script>
 
 <template>
-  <!-- <div > -->
   <CountryExtended v-if="showDetails" :info="detailsInfo" />
-  <!-- </div> -->
   <div v-else class="landingWrapper">
     <div class="filtersWrapper">
       <div class="inputWrapper">
         <div class="inputIcon">
-
-          <svg
-            class="svg-icon search-icon"
-            aria-labelledby="title desc"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 19.9 19.7"
-          >
-            <title id="title">Search Icon</title>
+<span class="material-icons">
+search
+</span>
+            <!-- <title id="title">Search Icon</title>
             <desc id="desc">A magnifying glass icon.</desc>
             <g class="search-path" fill="none" stroke="#848F91">
               <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
               <circle cx="8" cy="8" r="7" />
             </g>
-          </svg>
+          </svg> -->
         </div>
         <input
           v-model.trim="countryInput"
@@ -91,7 +82,9 @@ export default {
 
       <div class="dropdown">
         <button class="dropbutton">
-          Filter by Region <span class="dropdownIcon">⌄</span>
+          Filter by Region <span class="dropdownIcon"><span class="material-icons-outlined">
+expand_more
+</span></span>
         </button>
         <div class="dropdown-content">
           <button @click="getRegion(undefined)">All</button>
