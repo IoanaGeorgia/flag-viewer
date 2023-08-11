@@ -24,7 +24,6 @@ export default {
         this.countries = json;
       }
       this.countryInput = ""
-      console.log(this.countryInput, 'c input')
     },
 
     filterByCountry() {
@@ -49,6 +48,8 @@ export default {
   },
   computed: {
     showDetails() {
+      this.countryInput = ""
+      this.countries = json
       return this.$store.state.showDetails;
     },
   },
