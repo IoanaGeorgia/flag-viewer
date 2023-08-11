@@ -25,7 +25,7 @@ export default {
   <div class="headerWrapper">
     <div class="headerTitle">Where in the world?</div>
     <button @click="toggleTheme" aria-label="Toggle themes" class="themeButton">
-      <div class="themeButtonIcon"><span :class= 'theme == "darkMode" ? "material-icons" : "material-icons-outlined"'>
+      <div class="themeButtonIcon"><span :class= 'theme === "darkMode" ? "material-icons" : "material-icons-outlined"'>
 dark_mode
 </span></div>
       Dark Mode

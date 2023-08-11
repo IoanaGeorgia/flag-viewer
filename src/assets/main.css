@@ -131,19 +131,15 @@ button {
   text-align: left;
   background-color: var(--lighterBackgroundColor);
 }
-/* .dropdown-content button:nth-of-type(1){
-  margin-top:10px;
-} */
-
 .dropdown-content button:hover {
   background-color: var(--buttonHover);
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content, .dropdown:active .dropdown-content {
   display: block;
 }
 
-.dropdown:hover .dropbutton {
+.dropdown:hover .dropbutton, .dropdown:active .dropbutton {
   background-color: var(--lighterBackgroundColor);
 }
 .dataWrapper {

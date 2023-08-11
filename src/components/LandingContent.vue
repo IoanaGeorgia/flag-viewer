@@ -23,7 +23,7 @@ export default {
       } else {
         this.countries = json;
       }
-      this.countryInput = ""
+      this.countryInput = "";
     },
 
     filterByCountry() {
@@ -48,8 +48,8 @@ export default {
   },
   computed: {
     showDetails() {
-      this.countryInput = ""
-      this.countries = json
+      this.countryInput = "";
+      this.countries = json;
       return this.$store.state.showDetails;
     },
   },
@@ -64,9 +64,7 @@ export default {
     <div class="filtersWrapper">
       <div class="inputWrapper">
         <div class="inputIcon">
-<span class="material-icons">
-search
-</span>
+          <span class="material-icons"> search </span>
         </div>
         <input
           v-model.trim="countryInput"
@@ -78,9 +76,10 @@ search
 
       <div class="dropdown">
         <button class="dropbutton">
-          Filter by Region <span class="dropdownIcon"><span class="material-icons-outlined">
-expand_more
-</span></span>
+          Filter by Region
+          <span class="dropdownIcon"
+            ><span class="material-icons-outlined"> expand_more </span></span
+          >
         </button>
         <div class="dropdown-content">
           <button @click="getRegion(undefined)">All</button>
