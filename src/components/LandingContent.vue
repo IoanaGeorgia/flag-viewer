@@ -23,11 +23,13 @@ export default {
       } else {
         this.countries = json;
       }
+      this.countryInput = ""
+      console.log(this.countryInput, 'c input')
     },
 
     filterByCountry() {
       if (this.countryInput) {
-        this.countries = json.filter((obj) =>
+        this.countries = this.countries.filter((obj) =>
           obj.name.toLowerCase().includes(this.countryInput.toLowerCase())
         );
       } else {
@@ -64,13 +66,6 @@ export default {
 <span class="material-icons">
 search
 </span>
-            <!-- <title id="title">Search Icon</title>
-            <desc id="desc">A magnifying glass icon.</desc>
-            <g class="search-path" fill="none" stroke="#848F91">
-              <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
-              <circle cx="8" cy="8" r="7" />
-            </g>
-          </svg> -->
         </div>
         <input
           v-model.trim="countryInput"
