@@ -1,6 +1,6 @@
 <script>
 import CountryExtended from "./CountryExtended.vue";
-import json from "./assets/data.json";
+import json from "./src/assets/data.json";
 import DataCountry from "./DataCountry.vue";
 export default {
   name: "LandingContent",
