@@ -1,6 +1,6 @@
 <script>
 import HeaderComponent from "./HeaderComponent.vue";
-import json from "..\\assets\\data.json";
+import json from "../assets/data.json";
 
 export default {
   name: "CountryExtended",
