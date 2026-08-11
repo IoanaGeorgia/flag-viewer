@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "HeaderComponent",
+  name: "FooterComponent",
   data() {
     return {
       theme: "",
@@ -29,13 +29,7 @@ export default {
 </script>
 
 <template>
-  <div class="headerWrapper">
+  <footer>
     <div class="headerTitle" @click="goToMain()">Where in the world?</div>
-    <button @click="toggleTheme" aria-label="Toggle themes" class="themeButton">
-      <div class="themeButtonIcon"><span :class='theme === "darkMode" ? "material-icons" : "material-icons-outlined"'>
-          dark_mode
-        </span></div>
-      Dark Mode
-    </button>
-  </div>
+  </footer>
 </template>

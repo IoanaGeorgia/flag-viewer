@@ -8,10 +8,15 @@ const router = createRouter({
       name: "home",
       component: () => import("../components/HomeView.vue"),
     },
+     {
+      path: "/countries",
+      name: "countries",
+      component: () => import("../components/Countries.vue"),
+    },
     {
-      path: "/:name",
+      path: "/countries/:name",
       name: "about",
-      component: () => import("../components/HomeView.vue"),
+      component: () => import("../components/Countries.vue"),
       props: true,
     },
   ],
