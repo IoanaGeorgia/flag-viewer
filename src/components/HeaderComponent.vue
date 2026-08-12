@@ -8,6 +8,12 @@ export default {
     };
   },
 
+  watch: {
+    $route() {
+      this.isMobileOpen = false; 
+    }
+  },
+
   mounted() {
     let localTheme = localStorage.getItem("theme");
     document.documentElement.setAttribute("data-theme", localTheme);
