@@ -26,10 +26,7 @@ export default {
   },
   methods: {
     goBack() {
-      this.$router.push({
-        name: "home",
-        path: "/",
-      });
+      this.$router.go(-1);
       this.$store.commit("TOGGLE_DETAILS", false);
     },
     populationFormatter(population) {

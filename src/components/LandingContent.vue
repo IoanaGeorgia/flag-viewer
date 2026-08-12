@@ -101,6 +101,7 @@ export default {
         :population="i.population"
         :capital="i.capital"
         :region="i.region"
+        :key="i.name"
       />
     </div>
   </div>

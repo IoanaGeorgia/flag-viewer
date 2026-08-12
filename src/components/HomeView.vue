@@ -10,12 +10,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import img1 from '../assets/slider1.jpeg';
+import img1 from '../assets/slider1.jpg';
 import img2 from '../assets/slider2.jpg';
 import img3 from '../assets/slider3.jpeg';
 import img4 from '../assets/slider4.jpeg';
 import img5 from '../assets/slider5.jpg';
-import img6 from '../assets/slider6.jpeg';
+import img6 from '../assets/slider6.jpg';
 
 const modules = [Navigation, Pagination, Autoplay];
 
@@ -23,7 +23,7 @@ const sliderImages = [img1, img2, img3, img4, img5, img6];
 </script>
 
 <template>
-  <div class="greetings">
+  <div class="greetings pageWrapper">
     <div class="heroImage">
     </div>
 
@@ -68,7 +68,35 @@ const sliderImages = [img1, img2, img3, img4, img5, img6];
         </swiper-slide>
       </swiper>
 
-      <p class="title">Cultures of earth</p>
+      <div class="missionWrapper">
+        <div class="text">
+          <p class="subtitle">Mission</p>
+          <p>
+            Welcome to our platform, designed to bring the diverse cultures, landscapes, and geography of our planet
+            directly to learners everywhere. Inspired by UNESCO's dedication to global education, our mission is to
+            spark curiosity about different nations, helping students and geography enthusiasts alike discover the rich
+            traditions and unique environments that span across every continent.
+
+          </p>
+          <p>
+            Beyond just learning map locations, we believe in understanding the stories behind the world's most
+            remarkable places. By highlighting UNESCO World Heritage sites—from ancient historical landmarks to fragile
+            natural ecosystems—we strive to foster a deep appreciation for global preservation, inspiring the next
+            generation to care for and protect our shared planetary home.
+          </p>
+          <p>
+            <router-link to="/mission">
+              Learn more about our mission
+            </router-link>
+
+          </p>
+        </div>
+        <div class="missionImage">
+
+        </div>
+      </div>
+
+      <p class="subtitle">Cultures of earth</p>
       <p>
         Our planet is home to an astonishing diversity of traditions, where each geographical region has shaped unique
         ways of life and social interactions. While Western cultures often place a strong emphasis on individualism
@@ -125,7 +153,7 @@ const sliderImages = [img1, img2, img3, img4, img5, img6];
 
       <div class="unescoWrapper">
         <div class="text">
-          <p class="subtitle">UNESCO</p>
+          <p class="subtitle">UNESCO and InfoSchool</p>
           <p>
             UNESCO, or the United Nations Educational, Scientific and Cultural Organization, is a specialized agency
             dedicated to maintaining global peace and security by fostering international collaboration. Established
@@ -133,15 +161,13 @@ const sliderImages = [img1, img2, img3, img4, img5, img6];
             scientific research, and protects freedom of expression for the press worldwide.
           </p>
           <p>
-            For geography and culture enthusiasts, the organization is most famous for its World Heritage preservation
-            program, which protects unique historical monuments and natural reserves of inestimable value. From ancient
-            temples and historic city centers to fragile natural ecosystems, sites included on this organization's list
-            become recognized global treasures, drawing worldwide attention and being saved from destruction for
-            generations to come.
+            InfoSchool, a global organisation dedicated to bringing education to everyone through the means of internet,
+            partnered with UNESCO to strengten our common goals of appreciating the world cultures and bringing awareness 
+            in all corners of the world.
           </p>
           <p>
             <a href="https://www.unesco.org/en" target="_blank">
-              UNESCO official site
+              Visit the UNESCO official site
             </a>
           </p>
         </div>
@@ -232,5 +258,17 @@ const sliderImages = [img1, img2, img3, img4, img5, img6];
 
 :deep(.swiper-pagination-bullet-active) {
   background: #fff;
+}
+
+@media(max-width:839px){
+  .swiper{
+    height:300px;
+  }
+}
+
+@media(max-width:570px){
+  .swiper{
+    height:200px;
+  }
 }
 </style>

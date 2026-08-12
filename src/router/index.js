@@ -8,7 +8,7 @@ const router = createRouter({
       name: "home",
       component: () => import("../components/HomeView.vue"),
     },
-     {
+    {
       path: "/countries",
       name: "countries",
       component: () => import("../components/Countries.vue"),
@@ -18,6 +18,11 @@ const router = createRouter({
       name: "about",
       component: () => import("../components/Countries.vue"),
       props: true,
+    },
+    {
+      path: "/mission",
+      name: "mission",
+      component: () => import("../components/Mission.vue"),
     },
   ],
 });

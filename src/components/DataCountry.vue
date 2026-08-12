@@ -19,19 +19,38 @@ export default {
       required: true,
     },
     capital: {
-      value: [String, undefined],
-      required: true,
+      type: String,
+      required: false,
+      default:"N/A"
     },
   },
   data() {
-    return {};
+    return {
+      isLoading: true, 
+    };
+  },
+  methods: {
+    handleImageLoad() {
+      this.isLoading = false; 
+    },
   },
 };
 </script>
 
 <template>
   <div class="countryWrapper">
-    <img :src="flagIcon" class="countryFlag" />
+    <div v-if="isLoading" class="flagLoader">
+      <div class="spinner"></div>
+    </div>
+
+    <img 
+      :src="flagIcon" 
+      class="countryFlag" 
+      :class="{ 'is-hidden': isLoading }"
+      @load="handleImageLoad" 
+      :alt="countryName + ' flag'"
+    />
+    
     <div class="countryInfoWrapper">
       <p class="countryTitle">{{ countryName }}</p>
       <p class="countryInfo">
@@ -49,3 +68,4 @@ export default {
     </div>
   </div>
 </template>
+

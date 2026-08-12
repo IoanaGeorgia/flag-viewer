@@ -31,5 +31,6 @@ export default {
 <template>
   <footer>
     <div class="headerTitle" @click="goToMain()">Where in the world?</div>
+    <p class="note">All rights reserved</p>
   </footer>
 </template>
