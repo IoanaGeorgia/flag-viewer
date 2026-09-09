@@ -1,29 +1,7 @@
-# flag-viewer
+Where in the World
 
-This template should help get you started developing with Vue 3 in Vite.
+Technologies: Vue.js, Vue-Router, CSS
 
-## Recommended IDE Setup
+Link: https://ioanageorgia.github.io/flag-viewer/
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Description: Educational site meant to teach both children and adults geopolitical basic information such as the capital and bordering nations of a country, the spoken language and others. It is meant to celebrate diversity and the beauty of our planet.
